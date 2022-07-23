@@ -13,9 +13,40 @@ body {
   min-height: 100vh;
 }
 
+.div__title {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.title {
+  margin-top: 50px;
+  font-size: 4rem;
+  position: relative;
+  display: inline-block;
+  cursor: default;
+}
+
+.title::before {
+  content: '';
+  background-color: #45EC69;
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transition: transform 300ms ease;
+  transform-origin: right;
+  transform: scaleX(0);
+}
+
+.title:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 main {
   display: inline-block;
-  margin-top: 2%;
+  margin-top: 7%;
   padding: 15px;
   position: relative;
 }
